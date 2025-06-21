@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  jetsystem-slots:
+    container_name: jetsystem-slots
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    ports:
+      - "8101:80"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - jetsystem_host
+networks:
+  jetsystem_host:
+    name: jetsystem_host
