@@ -14,13 +14,13 @@ class ProsecutorController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can:gestionar_fiscales')->only('index');
+        /* $this->middleware('can:gestionar_fiscales')->only('index');
         $this->middleware('can:gestionar_fiscales')->only('create');
         $this->middleware('can:gestionar_fiscales')->only('store');
         $this->middleware('can:gestionar_fiscales')->only('show');
         $this->middleware('can:gestionar_fiscales')->only('edit');
         $this->middleware('can:gestionar_fiscales')->only('update');
-        $this->middleware('can:gestionar_fiscales')->only('destroy');
+        $this->middleware('can:gestionar_fiscales')->only('destroy'); */
     }
 
     /**

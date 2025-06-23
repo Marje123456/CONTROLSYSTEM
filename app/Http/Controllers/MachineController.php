@@ -22,7 +22,7 @@ class MachineController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can:cambio_estatus_maquina')->only('statusmachine');
+        /* $this->middleware('can:cambio_estatus_maquina')->only('statusmachine');
         $this->middleware('can:auditorias')->only('auditeject');
         $this->middleware('can:auditorias')->only('auditview');
         $this->middleware('can:auditorias')->only('auditindexmachine');
@@ -34,7 +34,7 @@ class MachineController extends Controller
         $this->middleware('can:pagar_maquina')->only('payment');
         $this->middleware('can:editaryeliminar_maquina')->only('edit');
         $this->middleware('can:editaryeliminar_maquina')->only('update');
-        $this->middleware('can:editaryeliminar_maquina')->only('destroy');
+        $this->middleware('can:editaryeliminar_maquina')->only('destroy'); */
     }
 
 
