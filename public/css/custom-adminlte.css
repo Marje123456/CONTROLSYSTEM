@@ -1,0 +1,36 @@
+/* Tus estilos personalizados de AdminLTE van aquí */
+
+/* Color de fondo de la barra lateral principal */
+.main-sidebar {
+    background-color: #0084ff !important; /* Un azul oscuro, por ejemplo */
+}
+
+/* Cambiar color de la barra donde esta el logo */
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
+    background-color: #d40000bb !important;
+  }
+
+/* Cambiar color de texto de los enlaces de la barra lateral si es necesario para contraste */
+.nav-sidebar .nav-link p,
+.nav-sidebar .nav-link i {
+    color: #ffffff !important; /* Un color claro para el texto e iconos */
+}
+
+/* Color de fondo y texto para el enlace activo en la barra lateral */
+.nav-sidebar .nav-item > .nav-link.active {
+    background-color: #d40000bd !important; /* Azul primario de Bootstrap, por ejemplo */
+    color: #ffffff !important;
+}
+
+/* Color de fondo de la barra de navegación superior */
+.main-header.navbar {
+    background-color: #d40000bd !important; /* Un gris oscuro, por ejemplo */
+}
+
+/* Cambiar color de texto de los enlaces de la barra de navegación superior si es necesario */
+.main-header.navbar .nav-link {
+    color: #f8f9fa !important; /* Un color claro para el texto */
+}
+.main-header.navbar .nav-link:hover {
+    color: #ced4da !important; /* Un color un poco más oscuro al pasar el ratón */
+}
