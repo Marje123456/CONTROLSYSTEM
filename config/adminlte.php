@@ -196,8 +196,8 @@ return [
     |
     */
 
-    'classes_body' => '',
-    'classes_brand' => 'bg-white',
+    'classes_body' => 'dark-mode',
+    'classes_brand' => 'bg-black',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => 'text-info',
@@ -221,7 +221,7 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => true,
+    'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => false,

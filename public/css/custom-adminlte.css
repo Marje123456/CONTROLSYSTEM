@@ -1,14 +1,30 @@
 /* Tus estilos personalizados de AdminLTE van aquí */
 
 /* Color de fondo de la barra lateral principal */
-.main-sidebar {
-    background-color: #0084ff !important; /* Un azul oscuro, por ejemplo */
+.main-sidebar, .sidebar-dark-primary, .main-sidebar.sidebar-dark-primary {
+    background:
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), /* Capa negra con opacidad */
+        url('/images/sidebar-bg.jpg') center center / cover no-repeat !important;
+    color: #fff !important;
 }
+
 
 /* Cambiar color de la barra donde esta el logo */
 .layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
-    background-color: #d40000bb !important;
-  }
+    background-color: #000 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+/* También para asegurar en todos los layouts posibles de AdminLTE */
+.main-sidebar .brand-link, .sidebar-dark-primary .brand-link {
+    background-color: #000 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
 
 /* Cambiar color de texto de los enlaces de la barra lateral si es necesario para contraste */
 .nav-sidebar .nav-link p,
@@ -18,13 +34,13 @@
 
 /* Color de fondo y texto para el enlace activo en la barra lateral */
 .nav-sidebar .nav-item > .nav-link.active {
-    background-color: #d40000bd !important; /* Azul primario de Bootstrap, por ejemplo */
-    color: #ffffff !important;
+    background-color: #fdd700ea !important; /* Azul primario de Bootstrap, por ejemplo */
+    color: #1d1d1d !important;
 }
 
 /* Color de fondo de la barra de navegación superior */
 .main-header.navbar {
-    background-color: #d40000bd !important; /* Un gris oscuro, por ejemplo */
+    background-color: #000000bd !important; /* Un gris oscuro, por ejemplo */
 }
 
 /* Cambiar color de texto de los enlaces de la barra de navegación superior si es necesario */
@@ -33,4 +49,113 @@
 }
 .main-header.navbar .nav-link:hover {
     color: #ced4da !important; /* Un color un poco más oscuro al pasar el ratón */
+}
+
+/*BOTONES*/
+/* =========================
+   PERSONALIZACIÓN DE BOTONES
+   ========================= */
+   .btn-primary {
+    background-color: #ffd900 !important;
+    border-color: #ffd900 !important;
+    color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #ffd900 !important;
+    border-color: #ffd900 !important;
+}
+
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #fff !important;
+}
+.btn-success:hover, .btn-success:focus {
+    background-color: #218838 !important;
+    border-color: #218838 !important;
+}
+
+.btn-danger {
+    background-color: #e3342f !important;
+    border-color: #e3342f !important;
+    color: #fff !important;
+}
+.btn-danger:hover, .btn-danger:focus {
+    background-color: #b52a23 !important;
+    border-color: #b52a23 !important;
+}
+
+.btn-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #212529 !important;
+}
+.btn-warning:hover, .btn-warning:focus {
+    background-color: #e0a800 !important;
+    border-color: #e0a800 !important;
+}
+
+.btn-info {
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+    color: #fff !important;
+}
+.btn-info:hover, .btn-info:focus {
+    background-color: #117a8b !important;
+    border-color: #117a8b !important;
+}
+
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #545b62 !important;
+    border-color: #545b62 !important;
+}
+
+/* =========================
+   PERSONALIZACIÓN DE TÍTULOS
+   ========================= */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffee00 !important;
+}
+
+/* =========================
+   PERSONALIZACIÓN DE TEXTOS
+   ========================= */
+.text-primary     { color: #d40000 !important; }
+.text-success     { color: #28a745 !important; }
+.text-danger      { color: #e3342f !important; }
+.text-warning     { color: #ffc107 !important; }
+.text-info        { color: #17a2b8 !important; }
+.text-secondary   { color: #6c757d !important; }
+.text-dark        { color: #343a40 !important; }
+.text-light       { color: #f8f9fa !important; }
+
+
+
+
+
+/* Fondo negro con imagen semitransparente en el menú lateral */
+
+.main-sidebar {
+    background: 
+        /* linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), */ /* Capa negra con opacidad */
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('/images/sidebar-bg.jpg') center center / cover no-repeat !important; /* Imagen de fondo */
+    color: #fff !important;
+}
+
+/* Opcional: mejora el contraste de los enlaces y textos */
+.main-sidebar .nav-link,
+.main-sidebar .brand-link,
+.main-sidebar .user-panel {
+    color: #fff !important;
+}
+
+/* Opcional: color de iconos */
+.main-sidebar .nav-icon {
+    color: #fff !important;
 }
