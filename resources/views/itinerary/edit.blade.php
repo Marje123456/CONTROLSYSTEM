@@ -37,7 +37,7 @@
                                         <input type="text" class="form-control" id="name_itinerary" name="name_itinerary" value="{{ $itinerary->name }}" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <label for="department">Municipio</label>
+                                        <label for="department">Departamento</label>
                                         <input type="text" class="form-control" id="department" name="department" value="{{ $department->name }}" readonly>
                                     </div>
                                     <div class="form-group">
