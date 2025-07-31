@@ -61,47 +61,52 @@ class UseroController extends Controller
         $userounique = User::where("email", $request->email)->first();   
         if (!$userounique) 
         {
-            $imagen = $request->file("imagen");
-        
-        $request->validate([
-            'imagen' => 'required|mimes:jpeg,jpg,png|max:5120',
-        ]);
+            // Hacer la imagen opcional
+            $url = '/images/default.png'; // Ruta por defecto
+            
+            if ($request->hasFile('imagen')) {
+                $imagen = $request->file('imagen');
+                
+                $request->validate([
+                    'imagen' => 'mimes:jpeg,jpg,png|max:5120',
+                ]);
+                
+                // Especificar explícitamente el disco 'public'
+                $disk = 'public';
+                
+                // Crear directorio si no existe
+                $directory = 'images/users';
+                if (!Storage::disk($disk)->exists($directory)) {
+                    Storage::disk($disk)->makeDirectory($directory, 0755, true);
+                }
+                
+                // Guardar la imagen en el disco público
+                $filename = time() . '_' . $imagen->getClientOriginalName();
+                $path = $imagen->storeAs($directory, $filename, $disk);
+                
+                // Obtener la URL pública
+                $url = Storage::disk($disk)->url($path);
+            }
 
-        // Especificar explícitamente el disco 'public'
-        $disk = 'public';
-        
-        // Crear directorio si no existe
-        $directory = 'images/users';
-        if (!Storage::disk($disk)->exists($directory)) {
-            Storage::disk($disk)->makeDirectory($directory, 0755, true);
-        }
+            //
+            $usero= new User;
+            $usero->name = $request->name;
+            $usero->email = $request->email;
+            $usero->password = $request->pass;
+            $usero->avatar = $url;
+            $usero->save();
 
-        // Guardar la imagen en el disco público
-        $filename = time() . '_' . $imagen->getClientOriginalName();
-        $path = $imagen->storeAs($directory, $filename, $disk);
-        
-        // Obtener la URL pública
-        $url = Storage::disk($disk)->url($path);
+            /*LOGBOOK */
+            $detailconstruction = "Data= Name: ".$request->name."| Email: ".$request->email."| Password: ".$request->pass;
+            $logbook= new Logbook;
+            $logbook->email_user = auth()->user()->email;
+            $logbook->activity = "Register User";
+            $logbook->detail = $detailconstruction;
+            $logbook->date_activity = Carbon::now();
+            $logbook->save();
+            /*END LOGBOOK */
 
-        //
-        $usero= new User;
-        $usero->name = $request->name;
-        $usero->email = $request->email;
-        $usero->password = $request->pass;
-        $usero->avatar = $url;
-        $usero->save();
-
-        /*LOGBOOK */
-        $detailconstruction = "Data= Name: ".$request->name."| Email: ".$request->email."| Password: ".$request->pass;
-        $logbook= new Logbook;
-        $logbook->email_user = auth()->user()->email;
-        $logbook->activity = "Register User";
-        $logbook->detail = $detailconstruction;
-        $logbook->date_activity = Carbon::now();
-        $logbook->save();
-        /*END LOGBOOK */
-
-        return redirect()->route('usero.index')->with('store','OK');
+            return redirect()->route('usero.index')->with('store','OK');
         }  
         else
         {
