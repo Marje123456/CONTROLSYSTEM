@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
