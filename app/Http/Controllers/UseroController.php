@@ -67,15 +67,21 @@ class UseroController extends Controller
             'imagen' => 'required|mimes:jpeg,jpg,png|max:5120',
         ]);
 
-        $token = str()->uuid();
+        // Especificar explícitamente el disco 'public'
+        $disk = 'public';
+        
+        // Crear directorio si no existe
+        $directory = 'images/users';
+        if (!Storage::disk($disk)->exists($directory)) {
+            Storage::disk($disk)->makeDirectory($directory, 0755, true);
+        }
 
-        $pathName = "images/users/{$token}-{$imagen->hashName()}";
-
-        $uploaded = Storage::disk()->put($pathName, $imagen->getContent(), [
-            'visibility' => 'public',
-        ]);
-
-        $url = Storage::disk()->url($pathName);
+        // Guardar la imagen en el disco público
+        $filename = time() . '_' . $imagen->getClientOriginalName();
+        $path = $imagen->storeAs($directory, $filename, $disk);
+        
+        // Obtener la URL pública
+        $url = Storage::disk($disk)->url($path);
 
         //
         $usero= new User;
