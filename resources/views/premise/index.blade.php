@@ -19,7 +19,7 @@
                         <th>RUT</th>
                         <th>Patente</th>
                         <th>Correo</th>
-                        <th>Municipio</th>
+                        <th>Departamento</th>
                         <th>Ciudad</th>
                         <th>Barrio</th>
                         <th></th>

@@ -1,6 +1,6 @@
 <div>
     <div class="form-group">
-        <label for="department">Municipio</label>
+        <label for="department">Departamento</label>
         <select name="department" id="department" class="custom-select" wire:model.live="departmentId">
             <option value="">Seleccione</option>
             @foreach ($departments as $department)

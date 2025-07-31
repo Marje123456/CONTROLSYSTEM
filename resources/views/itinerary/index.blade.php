@@ -18,7 +18,7 @@
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Fiscal Asignado</th>
-                        <th>Municipio</th>
+                        <th>Departamento</th>
                         <th>Ciudad</th>
                         <th>Barrio</th>
                         <th></th>
