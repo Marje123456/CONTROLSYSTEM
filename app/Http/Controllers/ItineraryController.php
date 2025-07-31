@@ -16,10 +16,10 @@ class ItineraryController extends Controller
 
     public function __construct()
     {
-        /* $this->middleware('can:crear_ruta')->only('create');
+        $this->middleware('can:crear_ruta')->only('create');
         $this->middleware('can:crear_ruta')->only('store');
         $this->middleware('can:asignar_ruta')->only('asignitinerary');
-        $this->middleware('can:asignar_ruta')->only('asignitineraryr'); */
+        $this->middleware('can:asignar_ruta')->only('asignitineraryr');
     }
 
 

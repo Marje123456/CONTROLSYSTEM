@@ -19,7 +19,7 @@ class PremiseController extends Controller
 {
     public function __construct()
     {
-        /* $this->middleware('can:auditorias')->only('auditeject');
+        this->middleware('can:auditorias')->only('auditeject');
         $this->middleware('can:auditorias')->only('auditview');
         $this->middleware('can:auditorias')->only('auditindex');
 
@@ -29,7 +29,7 @@ class PremiseController extends Controller
         $this->middleware('can:reportes')->only('index');
         $this->middleware('can:editaryeliminar_local')->only('edit');
         $this->middleware('can:editaryeliminar_local')->only('update');
-        $this->middleware('can:editaryeliminar_local')->only('destroy'); */
+        $this->middleware('can:editaryeliminar_local')->only('destroy');
     }
 
     /**

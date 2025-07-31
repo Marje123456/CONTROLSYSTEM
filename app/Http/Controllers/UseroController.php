@@ -16,13 +16,13 @@ class UseroController extends Controller
 {
     public function __construct()
     {
-        /* $this->middleware('can:gestionar_usuarios')->only('index');
+        $this->middleware('can:gestionar_usuarios')->only('index');
         $this->middleware('can:gestionar_usuarios')->only('create');
         $this->middleware('can:gestionar_usuarios')->only('store');
         $this->middleware('can:gestionar_usuarios')->only('edit');
         $this->middleware('can:gestionar_usuarios')->only('update');
         $this->middleware('can:gestionar_usuarios')->only('destroy');
-        $this->middleware('can:gestionar_usuarios')->only('asign'); */
+        $this->middleware('can:gestionar_usuarios')->only('asign');
     }
 
     public function index()

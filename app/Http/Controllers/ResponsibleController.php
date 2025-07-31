@@ -22,12 +22,12 @@ class ResponsibleController extends Controller
 
     public function __construct()
     {
-        /* $this->middleware('can:registrar_rlm')->only('create');
+        $this->middleware('can:registrar_rlm')->only('create');
         $this->middleware('can:registrar_rlm')->only('store');
         $this->middleware('can:reportes')->only('index');
         $this->middleware('can:editaryeliminar_representante')->only('edit');
         $this->middleware('can:editaryeliminar_representante')->only('update');
-        $this->middleware('can:editaryeliminar_representante')->only('destroy'); */
+        $this->middleware('can:editaryeliminar_representante')->only('destroy');
     }
 
     /**
