@@ -19,7 +19,7 @@ class PremiseController extends Controller
 {
     public function __construct()
     {
-        this->middleware('can:auditorias')->only('auditeject');
+        $this->middleware('can:auditorias')->only('auditeject');
         $this->middleware('can:auditorias')->only('auditview');
         $this->middleware('can:auditorias')->only('auditindex');
 
