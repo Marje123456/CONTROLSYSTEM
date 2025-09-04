@@ -119,11 +119,19 @@
                                 
                                 // Evento para el checkbox "Seleccionar todos"
                                 selectAllCheckbox.addEventListener('change', function() {
-                                    const visibleItems = document.querySelectorAll('.permission-item[style!="display: none;"] .permission-checkbox');
+                                    const visibleItems = document.querySelectorAll('.permission-item:not([style*="display: none"]) .permission-checkbox');
+                                    const isChecked = this.checked;
                                     visibleItems.forEach(checkbox => {
-                                        checkbox.checked = this.checked;
+                                        checkbox.checked = isChecked;
                                     });
-                                    updateSelectAllState();
+                                    // No es necesario llamar a updateSelectAllState aquí ya que los eventos change se dispararán
+                                });
+                                
+                                // Mejorar la detección de cambios en los checkboxes individuales
+                                document.addEventListener('change', function(e) {
+                                    if (e.target && e.target.matches('.permission-checkbox')) {
+                                        updateSelectAllState();
+                                    }
                                 });
                                 
                                 // Eventos para los checkboxes individuales
