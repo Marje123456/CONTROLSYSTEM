@@ -29,6 +29,14 @@
                                         @csrf
                                         @foreach ($roles as $role)
                                         @switch(true)
+                                        @case($role->name == 'Developer')
+                                            @can('manage-blog')
+                                            <div class="form-group clearfix"> 
+                                                {!! Form::checkbox('roles[]', $role->id, $usero->hasAnyRole($role->id) ? : false, ['class'=>'mr1']) !!}
+                                                {{$role->name}}
+                                            </div>
+                                            @endcan
+                                                @break
                                             @case($role->name == 'Administrador' || $role->name == 'Intendente')
                                             @can('configuracion')
                                             <div class="form-group clearfix"> 
