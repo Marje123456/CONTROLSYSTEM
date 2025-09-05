@@ -30,15 +30,15 @@
                                         @foreach ($roles as $role)
                                         @switch(true)
                                         @case($role->name == 'Developer')
-                                            @can('manage-blog')
+                                            @can('asignar_rol-developer')
                                             <div class="form-group clearfix"> 
                                                 {!! Form::checkbox('roles[]', $role->id, $usero->hasAnyRole($role->id) ? : false, ['class'=>'mr1']) !!}
                                                 {{$role->name}}
                                             </div>
                                             @endcan
                                                 @break
-                                            @case($role->name == 'Administrador' || $role->name == 'Intendente')
-                                            @can('configuracion')
+                                            @case($role->name == 'Administrador')
+                                            @can('asignar_rol-administrador')
                                             <div class="form-group clearfix"> 
                                                 {!! Form::checkbox('roles[]', $role->id, $usero->hasAnyRole($role->id) ? : false, ['class'=>'mr1']) !!}
                                                 {{$role->name}}
@@ -46,7 +46,15 @@
                                             @endcan
                                                 @break
                                             @case($role->name == 'Municipalidad')
-                                            @can('cierre_caja')
+                                            @can('asignar_rol-municipalidad')
+                                            <div class="form-group clearfix"> 
+                                                {!! Form::checkbox('roles[]', $role->id, $usero->hasAnyRole($role->id) ? : false, ['class'=>'mr1']) !!}
+                                                {{$role->name}}
+                                            </div>
+                                            @endcan
+                                                @break
+                                                @case($role->name == 'Intendente')
+                                            @can('asignar_rol-intendente')
                                             <div class="form-group clearfix"> 
                                                 {!! Form::checkbox('roles[]', $role->id, $usero->hasAnyRole($role->id) ? : false, ['class'=>'mr1']) !!}
                                                 {{$role->name}}
