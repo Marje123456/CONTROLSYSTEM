@@ -8,5 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('usero', UseroController::class)->names('usero');
 
-    Route::get('asignrole', [UseroController::class, 'asign'])->name('usero.asign');
+    //Route::get('asignrole', [UseroController::class, 'asign'])->name('usero.asign');
+
+    Route::get('usero/{usero}/asignrole', [UseroController::class, 'asign'])
+    ->name('usero.asign');
   });
